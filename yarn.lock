@@ -40,7 +40,7 @@
     "@atlaskit/analytics-next" "^3.0.6"
     "@atlaskit/theme" "^6.0.1"
 
-"@atlaskit/button@^9.0.13":
+"@atlaskit/button@^9.0.10", "@atlaskit/button@^9.0.13":
   version "9.0.13"
   resolved "https://registry.yarnpkg.com/@atlaskit/button/-/button-9.0.13.tgz#58410b1ef89b33b3ef847a56a52ac6894f9e07e2"
   integrity sha512-fmObO53gRVlL8pkUvsq/Eo2tuVi4wo852kew2O3XoIPUprQEY0k4Q2ZY51QnNi6LrsaKuApK2ZKsUooAWmbxaw==
@@ -132,6 +132,16 @@
     "@atlaskit/theme" "^6.0.2"
     prop-types "^15.5.10"
     react-beautiful-dnd "^9.0.0"
+
+"@atlaskit/empty-state@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/empty-state/-/empty-state-3.1.0.tgz#9157d76d0627e57d56171034939e683404475015"
+  integrity sha512-lPWXUD5l6i83/QvOLLJCvZacmlImep926SxnRx5RzgJRtjHnBRe9nHmEtt10WkKna5nuLcveulklVh8YUBG7yg==
+  dependencies:
+    "@atlaskit/button" "^9.0.10"
+    "@atlaskit/spinner" "^9.0.9"
+    "@atlaskit/theme" "^6.0.3"
+    babel-runtime "^6.26.0"
 
 "@atlaskit/field-base@^11.0.6":
   version "11.0.6"
