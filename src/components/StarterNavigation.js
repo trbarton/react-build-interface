@@ -44,7 +44,7 @@ const themes = {
     containerTheme: {
       ...presetThemes.global,
       ...createGlobalTheme(colors.T50, colors.T400),
-      item.active.background: '#0282a0',
+      // item.active.background: '#0282a0',
     },
   },
 };
