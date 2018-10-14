@@ -13,7 +13,8 @@ import BitbucketPipelinesIcon from '@atlaskit/icon/glyph/bitbucket/pipelines';
 import BitbucketBuildsIcon from '@atlaskit/icon/glyph/bitbucket/builds';
 import SearchIcon from '@atlaskit/icon/glyph/search';
 import CreateIcon from '@atlaskit/icon/glyph/add';
-import AddonIcon from '@atlaskit/icon/glyph/addon';
+import Icon from '@atlaskit/icon';
+import ShipIcon from '@atlaskit/icon/glyph/ship';
 import ArrowleftIcon from '@atlaskit/icon/glyph/arrow-left';
 
 import CreateDrawer from '../components/CreateDrawer';
@@ -22,6 +23,14 @@ import HelpDropdownMenu from '../components/HelpDropdownMenu';
 import AccountDropdownMenu from '../components/AccountDropdownMenu';
 import atlaskitLogo from '../images/atlaskit.png';
 import PageTitle from './PageTitle';
+import { L3Glyph } from './L3Glyph';
+
+const createThemeDiffActive = function () {
+  let theme = createGlobalTheme(colors.T50, colors.T400);
+  theme.item.selected.background = '#0282a0';
+  console.log(theme);
+  return theme;
+}
 
 const themes = {
   global: {
@@ -43,9 +52,9 @@ const themes = {
     },
     containerTheme: {
       ...presetThemes.global,
-      ...createGlobalTheme(colors.T50, colors.T400),
-      // item.active.background: '#0282a0',
-    },
+      ...createThemeDiffActive(),
+      // ...createGlobalTheme(colors.T50, colors.T400),
+    }
   },
 };
 
@@ -74,7 +83,9 @@ export default class StarterNavigation extends React.Component {
   render() {
     console.log(themes);
     const backIcon = <ArrowleftIcon label="Back icon" size="medium" />;
-    const globalPrimaryIcon = <AddonIcon label="L3 ASV icon" size="xlarge" />;
+    // const globalPrimaryIcon = <AddonIcon label="L3 ASV icon" size="xlarge" />;
+    const globalPrimaryIcon = <Icon glyph={L3Glyph} label="L3 ASV icon" size="xlarge" />;
+    themes.custom.containerTheme.item.active.background = '#0282a0'
 
     return (
       <Nav
@@ -83,13 +94,12 @@ export default class StarterNavigation extends React.Component {
         onResize={this.props.onNavResize}
         containerHeaderComponent={() => (
           <AkContainerTitle
-            icon={<AddonIcon label="L3 ASV" />}
+            icon={<ShipIcon label="L3 ASV"/>}
             text="L3 ASV"
           />
         )}
         globalPrimaryIcon={globalPrimaryIcon}
         globalPrimaryItemHref="/"
-        globalSearchIcon={<SearchIcon label="Search icon" />}
         hasBlanket
         globalTheme={themes.custom.globalTheme}
         containerTheme={themes.custom.containerTheme}
@@ -101,7 +111,7 @@ export default class StarterNavigation extends React.Component {
           this.state.navLinks.map(link => {
             const [url, title, Icon] = link;
             return (
-              <Link key={url} to={url}>
+              <Link key={url} to={url} style={{ textDecoration: 'none' }}>
                 <AkNavigationItem
                   icon={<Icon label={title} size="medium" />}
                   text={title}

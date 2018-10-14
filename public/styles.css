@@ -1,0 +1,7 @@
+textarea {
+  min-height: 168px !important;
+}
+
+.upload-button {
+  min-height: 40px;
+}
